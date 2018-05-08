@@ -7,5 +7,5 @@ export default class PeopleEndpoint {
    * Gets a list of SalesLoft People 
    * @return {Object}        
    */
-  getAll = () => this.http.get('/people')
+  getAll = () => this.http.get('/people.json')
 }

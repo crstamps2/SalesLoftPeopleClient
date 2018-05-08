@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {apiBaseUrl} from 'lib/config/RailsEnvironment'
+import {railsBaseUrl} from 'lib/config/RailsEnvironment'
 
 //DONT REMOVE THESE. THEY ARE IMPLICITLY RELIED UPON!!!!!!!!!!!!!!!
 import axiosDefaults from 'axios/lib/defaults'
@@ -23,7 +23,7 @@ jest.mock('axios', () => ({
 
 jest.mock('lib/config/RailsEnvironment', () => {
   return {
-    apiBaseUrl: 'https://example.salesloft.com/'
+    railsBaseUrl: 'https://example.salesloft.com/'
   }
 })
 
