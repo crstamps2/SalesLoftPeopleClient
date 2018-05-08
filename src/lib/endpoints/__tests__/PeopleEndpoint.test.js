@@ -21,7 +21,7 @@ describe('#get', () => {
   it('performs a GET request to the /people endpoint', () => {
     return endpoint.getAll().then(response => {
       expect(mockAxios.get.mock.calls.length).toEqual(1)
-      expect(mockAxios.get.mock.calls[0][0]).toEqual(`/people`)
+      expect(mockAxios.get.mock.calls[0][0]).toEqual(`/people.json`)
     })
   })
 })

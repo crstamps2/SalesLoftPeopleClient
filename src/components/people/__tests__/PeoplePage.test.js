@@ -22,7 +22,7 @@ beforeEach(() => {
 
   people = {mockFor: 'people'}
   apiClient.people = {
-    getAll: jest.fn(() => people),
+    getAll: jest.fn(() => Promise.resolve({data:{data:people}})),
   }
 
   renderComponent()

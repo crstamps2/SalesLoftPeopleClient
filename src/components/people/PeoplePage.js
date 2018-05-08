@@ -3,16 +3,13 @@ import {withRouter} from 'react-router-dom'
 import apiClient from 'lib/apiClient'
 
 export class PeoplePage extends Component {
-  constructor() {
-    super()
-
-    this.state = {}
+  state = {
+    people: {}
   }
 
   componentWillMount = () => {
-    this.setState({
-      people: apiClient.people.getAll()
-    })
+    apiClient.people.getAll()
+      .then(response => this.setState({people : response.data.data}))
   }
 
   render = () => {
