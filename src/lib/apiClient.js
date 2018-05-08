@@ -1,6 +1,7 @@
 import axios from 'axios'
 import axiosDefaults from 'axios/lib/defaults'
 import {apiBaseUrl} from 'lib/config/RailsEnvironment'
+import PeopleEndpoint from './endpoints/PeopleEndpoint'
 
 const http = axios.create({
   baseURL: apiBaseUrl,
@@ -11,5 +12,5 @@ const http = axios.create({
 })
 
 export default {
-//   people: new PeopleEndpoint(http),
+  people: new PeopleEndpoint(http),
 }
