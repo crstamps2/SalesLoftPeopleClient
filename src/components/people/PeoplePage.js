@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import apiClient from 'lib/apiClient'
 import Person from './Person'
+import './PeoplePage.css'
 
 export class PeoplePage extends Component {
   state = {
@@ -21,7 +22,7 @@ export class PeoplePage extends Component {
 
   render = () => {
     return ( 
-      <div className='people-page' >
+      <div className='people container' >
         {this.state.people.map((person, index) => {
           return this.renderPerson(person, index)
         })} 

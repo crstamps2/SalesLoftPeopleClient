@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {string, number} from 'prop-types'
+import './Person.css'
 
 export default class Person extends Component {
   static propTypes = {
@@ -11,7 +12,7 @@ export default class Person extends Component {
 
   render = () =>{
     return (
-      <div>
+      <div className='Person'>
         <div className='person-displayName'>{this.props.displayName}</div>
         <div className='person-emailAddress'>{this.props.emailAddress}</div>
         <div className='person-title'>{this.props.title}</div>
