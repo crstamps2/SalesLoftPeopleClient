@@ -9,10 +9,6 @@ export default class Person extends Component {
     title: string
   }
 
-  constructor(props) {
-    super(props)
-  }
-
   render = () =>{
     return (
       <div>

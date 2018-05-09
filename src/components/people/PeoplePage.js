@@ -23,7 +23,7 @@ export class PeoplePage extends Component {
     return ( 
       <div className='people-page' >
         {this.state.people.map((person, index) => {
-          this.renderPerson(person, index)
+          return this.renderPerson(person, index)
         })} 
       </div>
     )
