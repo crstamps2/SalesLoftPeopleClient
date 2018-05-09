@@ -1,13 +1,12 @@
 import React, {Component} from 'react'
-import {string, shape} from 'prop-types'
+import {string, number} from 'prop-types'
 
 export default class Person extends Component {
   static propTypes = {
-    person: shape({
-      name: string.isRequired,
-      email: string.isRequired,
-      title: string.isRequired
-    })
+    id: number.isRequired,
+    displayName: string.isRequired,
+    emailAddress: string.isRequired,
+    title: string
   }
 
   constructor(props) {
@@ -17,9 +16,9 @@ export default class Person extends Component {
   render = () =>{
     return (
       <div>
-        <div className='person-name'>{this.props.person.name}</div>
-        <div className='person-email'>{this.props.person.email}</div>
-        <div className='person-title'>{this.props.person.title}</div>
+        <div className='person-displayName'>{this.props.displayName}</div>
+        <div className='person-emailAddress'>{this.props.emailAddress}</div>
+        <div className='person-title'>{this.props.title}</div>
       </div>
     )
   }

@@ -1,7 +1,8 @@
 import React from 'react'
 import {PeoplePage} from '../PeoplePage'
-import {shallow} from 'enzyme'
+import {mount} from 'enzyme'
 import apiClient from 'lib/apiClient'
+import Person from '../Person'
 
 jest.mock('lib/apiClient', () => {
   return {}
@@ -10,9 +11,10 @@ jest.mock('lib/apiClient', () => {
 let component
 let instance
 let people
+let person
 
 const renderComponent = () => {
-  component = shallow(
+  component = mount(
     <PeoplePage/>
   )
   instance = component.instance()
@@ -20,7 +22,19 @@ const renderComponent = () => {
 
 beforeEach(() => {
 
-  people = {mockFor: 'people'}
+  people = [
+    {
+      id: 1,
+      displayName: 'Bob Saget',
+      emailAddress: 'bob@example.com',
+      title: 'Comedian Dad'
+    }, {
+      id: 2,
+      displayName: 'Fred Flinstone',
+      emailAddress: 'fred@example.com',
+      title: 'Cave Man'
+    }
+  ]
   apiClient.people = {
     getAll: jest.fn(() => Promise.resolve({data:{data:people}})),
   }

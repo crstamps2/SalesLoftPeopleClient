@@ -1,5 +1,5 @@
 import React from 'react'
-import {shallow, mount} from 'enzyme'
+import {mount} from 'enzyme'
 import Person from '../Person'
 
 jest.mock('lib/apiClient')
@@ -9,20 +9,13 @@ let component
 
 beforeEach(() => {
   props = {
-    person: {
-      name:'Cody',
-      email:'test@example.com',
-      title:'Some Guy'
-    }
+    id: 123,
+    displayName:'Cody',
+    emailAddress:'test@example.com',
+    title:'Some Guy'
   }
   mountComponent()
 })
-
-const shallowRenderComponent = () => {
-  return component = shallow(
-    <Person {...props} />
-  )
-}
 
 const mountComponent = () => {
   return component = mount(
@@ -30,17 +23,17 @@ const mountComponent = () => {
   )
 }
 
-it('displays the persons name', () => {
-  const name = component.find('.person-name').first()
-  expect(name.text()).toEqual(props.person.name)
+it('displays the persons displayName', () => {
+  const displayName = component.find('.person-displayName').first()
+  expect(displayName.text()).toEqual(props.displayName)
 })
 
-it('displays the persons email', () => {
-  const email = component.find('.person-email').first()
-  expect(email.text()).toEqual(props.person.email)
+it('displays the persons emailAddress', () => {
+  const emailAddress = component.find('.person-emailAddress').first()
+  expect(emailAddress.text()).toEqual(props.emailAddress)
 })
 
 it('displays the persons title', () => {
   const title = component.find('.person-title').first()
-  expect(title.text()).toEqual(props.person.title)
+  expect(title.text()).toEqual(props.title)
 })
