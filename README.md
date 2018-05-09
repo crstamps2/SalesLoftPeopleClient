@@ -6,7 +6,7 @@ Simply clone this repo: `cd ~/workspace && git clone https://github.com/crstamps
 
 Open the directory: `cd ~/workspace/SalesLoftPeopleClient`
 
-And start the app<sup>1</sup>: `yarn start`
+And start the app<sup>1</sup>: `yarn install && yarn start`
 
 This should automatically start the app in your browser, however if it doesn't, just navigate to [localhost:3001/people](localhost:3001/people)
 
