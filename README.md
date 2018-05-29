@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/crstamps2/SalesLoftPeopleClient.svg?branch=master)](https://travis-ci.com/crstamps2/SalesLoftPeopleClient)
+
 # SaleLoft People Client
 A react web application to display people at SalesLoft
 
